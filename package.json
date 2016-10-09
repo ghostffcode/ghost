@@ -1,0 +1,22 @@
+{
+  "name": "componentize-form",
+  "version": "1.0.0",
+  "description": "Scotch Tutorial code sample",
+  "main": "src/App.es6",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "dev": "webpack-dev-server --inline --hot",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghostffcode/componentize-form.git"
+  },
+  "author": "Chimeremeze Ukah <bliss@ghostffco.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ghostffcode/componentize-form/issues"
+  },
+  "homepage": "https://github.com/ghostffcode/componentize-form#readme"
+}
