@@ -1,2 +1,2 @@
-# componentize-form
-Componentize HTML forms using javascript
+# jsIt
+Simple javascript library using es6
