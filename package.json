@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "Scotch Tutorial code sample",
   "main": "src/App.es6",
-  "dependencies": {},
+  "dependencies": {
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  },
   "devDependencies": {
     "babel-cli": "^6.16.0",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.16.0",
     "chai": "^3.5.0",
     "isparta": "^4.0.0",
