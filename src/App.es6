@@ -1,26 +1,25 @@
-class Rectangle {
-  constructor(width, height, el) {
-    this.width = width;
-    this.height = height;
-    this.element = el;
+"use strict";
+
+class ghost {
+  constructor(selector) {
+    this._selector = selector;
   }
 
-  set element(value) {
+  set selector(value) {
     return document.querySelector(value);
   }
 
   //
-  get element () {
-    return this._element;
+  get selector () {
+    return document.querySelector(this._selector);
   }
 
-  content () {
-    return this.element.innerHTML;
+  html () {
+    return this.selector.innerHTML;
   }
 }
 
-// We export the Rectangle class so it can
-// be require()'d in other files.
-module.exports = (w, h, element) => {
-  return new Rectangle(w, h, element);
+// we export the class instance via a function call
+module.exports = (selector) => {
+  return new ghost (selector);
 };
