@@ -1,2 +1,2 @@
-# jsIt
-Simple javascript library using es6
+# ghost
+Personal Javascript library
