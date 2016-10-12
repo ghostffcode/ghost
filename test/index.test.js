@@ -1,50 +1,38 @@
 import chai, { expect } from "chai";
 import path from "path";
-import jsdom from "jsdom";
 
-// Import the Rectangle class.
-import Rectangle from "../src/App.es6";
+require('jsdom-global')()
+
+// Import the ghost class instance.
+import ghost from "../src/App.es6";
 
 chai.should();
 
-const html = path.join(__dirname, "index.html");
+// create mock html tag
+document.body.innerHTML = "<div>Call Me</div>";
 
-function execdom (callback) {
-  jsdom.env(html, (err, window) => {
-    callback();
+describe('#Ghost Library Test', function () {
+
+  let Ghost;
+
+  beforeEach(function () {
+    Ghost = ghost('div');
   });
-}
 
-describe('#Library Test', () => {
-  let rectangle;
-
-  beforeEach(() => {
-    execdom(() =>{
-      rectangle = Rectangle(10, 20, 'div');
+  describe('#Element', function () {
+    it('should be an object', function () {
+      Ghost.selector.should.be.an('object');
     });
   });
 
-});
-
-
-describe('#Element', () => {
-  it('should be an object', () => {
-    execdom(() =>{
-      rectangle.element.should.be.an('object');
+  describe('#DivContent', function () {
+    it('should be a string', function () {
+      Ghost.html().should.be.a('string');
     });
-  });
-});
 
-describe('#DivContent', () => {
-  it('should be a string', () => {
-    execdom(() =>{
-      rectangle.content().should.be.a('string');
+    it('should equal call me', function () {
+      Ghost.html().should.equal('Call Me');
     });
   });
 
-  it('should equal call me', () => {
-    execdom(() =>{
-      rectangle.content().should.equal('Call Me');
-    });
-  });
 });
