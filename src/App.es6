@@ -2,19 +2,13 @@
 
 class ghost {
   constructor(selector) {
-    this._selector = selector;
+    this.selector = document.querySelector(selector);
   }
 
-  set selector(value) {
-    return document.querySelector(value);
-  }
-
-  //
-  get selector () {
-    return document.querySelector(this._selector);
-  }
-
-  html () {
+  html (content = null) {
+    if (content !== null) {
+      this.selector.innerHTML = content;
+    }
     return this.selector.innerHTML;
   }
 }
