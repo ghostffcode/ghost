@@ -1,5 +1,4 @@
-import chai, { expect } from "chai";
-import path from "path";
+import chai from "chai";
 
 require('jsdom-global')()
 
@@ -9,30 +8,33 @@ import ghost from "../src/App.es6";
 chai.should();
 
 // create mock html tag
-document.body.innerHTML = "<div>Call Me</div>";
+document.body.innerHTML = "<div>Sample text in div</div>";
 
 describe('#Ghost Library Test', function () {
 
-  let Ghost;
-
-  beforeEach(function () {
-    Ghost = ghost('div');
-  });
-
-  describe('#Element', function () {
+  describe('#Element Selector', function () {
     it('should be an object', function () {
-      Ghost.selector.should.be.an('object');
+      ghost('div').selector.should.be.an('object');
     });
   });
 
   describe('#DivContent', function () {
     it('should be a string', function () {
-      Ghost.html().should.be.a('string');
+      ghost('div').html().should.be.a('string');
     });
 
-    it('should equal call me', function () {
-      Ghost.html().should.equal('Call Me');
+    it('should equal Sample text in div', function () {
+      ghost('div').html().should.equal('Sample text in div');
     });
+
+    it('should equal paragraph text', function () {
+      ghost('div').html('<p>changed value</p>').should.equal('<p>changed value</p>');
+    });
+
+    it('should equal empty string', function () {
+      ghost('div').html('').should.equal('');
+    });
+
   });
 
 });
