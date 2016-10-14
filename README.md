@@ -2,7 +2,7 @@
 ---
 [![CircleCI](https://circleci.com/gh/ghostffcode/ghost.svg?style=svg)](https://circleci.com/gh/ghostffcode/ghost) [![Code Climate](https://codeclimate.com/github/ghostffcode/ghost/badges/gpa.svg)](https://codeclimate.com/github/ghostffcode/ghost) [![Coverage Status](https://coveralls.io/repos/github/ghostffcode/ghost/badge.svg?branch=master)](https://coveralls.io/github/ghostffcode/ghost?branch=master)
 
-Javascript Library building boilerplate using webpack. You can use and modify as much as you want.
+Javascript Library building boilerplate using webpack.
 
 ---
 ## To use:
